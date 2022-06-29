@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head", {title: 'CrearProducto'}) %>
+</head>
+
+
+<body class="body_form_register">
+
+    <!--MENU-->
+    <header>
+        <%- include("../partials/header") %>
+    </header>
+    <!--MENU-->
+    <br>
+    <br>
+    <br>
+
+<div class="formulario_producto">
+    <div class="form">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="products-title">Crear Producto</h2>
+            </div>
+            <Br>
+            <Br>
+        </div>
+        <div class="col-12">
+            <form id="formularioProducto" action="/products/tienda" method="POST" enctype="multipart/form-data">
+                <div class="cont_formulario_producto">
+                    <div class="div_formulario_productos">
+                        <label for="name" class="form-label">Nombre del producto:</label>
+                        <input type="text" id="name" name="name" placeholder="Ej: Televisor" class="form-input"
+                        value="<%=locals.oldData ? oldData.name : ''%>">
+                        <% if (locals.errors && errors.name) { %>
+                            <div class="text-danger">
+                            <%= errors.name.msg %>
+                            </div>
+                         <% } %>
+                    </div>
+                    <div class="div_formulario_productos">
+                        <label for="price" class="form-label">Precio del producto:</label>
+                        <input type="number" id="price" name="price" placeholder="Ej: 680" class="form-input"
+                        value="<%=locals.oldData ? oldData.price : ''%>">
+                        <% if (locals.errors && errors.price) { %>
+                            <div class="text-danger">
+                            <%= errors.price.msg %>
+                            </div>
+                         <% } %>
+                    </div>
+                    <div class="div_formulario_productos">
+                        <label for="discount" class="form-label">Descuento:</label>
+                        <input type="number" id="discount" name="discount" placeholder="Ej: 10" class="form-input"
+                        value="<%=locals.oldData ? oldData.discount : ''%>">
+                        <% if (locals.errors && errors.discount) { %>
+                            <div class="text-danger">
+                            <%= errors.discount.msg %>
+                            </div>
+                         <% } %>
+                    </div>
+                    <div class="div_formulario_productos">
+                        <label for="inventory" class="form-label">Cantidad de producto:</label>
+                        <input type="number" id="inventory" name="inventory" placeholder="Ej: 10" class="form-input"
+                        value="<%=locals.oldData ? oldData.inventory : ''%>">
+                        <% if (locals.errors && errors.inventory) { %>
+                            <div class="text-danger">
+                            <%= errors.inventory.msg %>
+                            </div>
+                         <% } %>
+                    </div>
+                    <div class="div_formulario_productos">
+                        <label for="category" class="form-label">Categoría:</label>
+                        <select name="category" id="category" class="form-input">
+                            <option value="select">Elegí</option>
+                            <option value='1' <%= (locals.oldData && oldData.category) === '1' ? 'selected' : '' ; %> >Televisores</option>
+							<option value="2" <%= (locals.oldData && oldData.category) === '2' ? 'selected' : '' ; %> >Celulares</option>
+                            <option value="3" <%= (locals.oldData && oldData.category) === '3' ? 'selected' : '' ; %>>Computadoras</option>
+                            <option value='10' <%= (locals.oldData && oldData.category) === '10' ? 'selected' : '' ; %> >Videojuegos</option>
+                            <option value='12' <%= (locals.oldData && oldData.category) === '12' ? 'selected' : '' ; %> >Auriculares, parlantes y audio</option>
+                            <option value='15' <%= (locals.oldData && oldData.category) === '15' ? 'selected' : '' ; %> >Pc gamer</option>
+                        </select>
+                    </div>
+
+                    <div class="div_formulario_productos">
+                        <label for="mark" class="form-label">Marca:</label>
+                        <select name="mark" id="mark" class="form-input">
+                            <option value="select">Elegí</option>
+                            <option value="1" <%= (locals.oldData && oldData.mark) === '1' ? 'selected' : '' ; %>>Samsung</option>
+							<option value="2" <%= (locals.oldData && oldData.mark) === '2' ? 'selected' : '' ; %>>LG</option>
+                            <option value="3" <%= (locals.oldData && oldData.mark) === '3' ? 'selected' : '' ; %>>Lenovo</option>
+                            <option value="4" <%= (locals.oldData && oldData.mark) === '4' ? 'selected' : '' ; %>>Apple</option>
+                            <option value="5" <%= (locals.oldData && oldData.mark) === '5' ? 'selected' : '' ; %>>Huawei</option>
+                            <option value="6" <%= (locals.oldData && oldData.mark) === '6' ? 'selected' : '' ; %>>Xiaomi</option>
+                            <option value="7" <%= (locals.oldData && oldData.mark) === '7' ? 'selected' : '' ; %>>Hisense
+                            <option value="8" <%= (locals.oldData && oldData.mark) === '8' ? 'selected' : '' ; %>>Panasonic</option>
+                            <option value="9" <%= (locals.oldData && oldData.mark) === '9' ? 'selected' : '' ; %>>Sony</option>
+                            <option value="10" <%= (locals.oldData && oldData.mark) === '10' ? 'selected' : '' ; %>>Dell</option>
+                            <option value="11" <%= (locals.oldData && oldData.mark) === '11' ? 'selected' : '' ; %>>HP</option>
+                            <option value="12" <%= (locals.oldData && oldData.mark) === '12' ? 'selected' : '' ; %>>Acer</option>
+                            <option value="13" <%= (locals.oldData && oldData.mark) === '13' ? 'selected' : '' ; %>>Asus</option>
+                            <option value="14" <%= (locals.oldData && oldData.mark) === '14' ? 'selected' : '' ; %>>Nintendo</option>
+                            </option>
+                        </select>
+                        <% if (locals.errors && errors.mark) { %>
+                            <div class="text-danger">
+                            <%= errors.mark.msg %>
+                            </div>
+                         <% } %>
+                    </div>
+                
+                    <div class="div_formulario_productos">
+                        <label for="description" class="form-label">Descripción:</label>
+                        <textarea name="description" id="description" class="form-input"
+                        value="<%= locals.oldData ? oldData.description: '' %>"></textarea>
+                        <% if (locals.errors && errors.description) { %>
+                            <div class="text-danger">
+                            <%= errors.description.msg %>
+                            </div>
+                         <% } %>
+                    </div>
+
+                    <div class="div_formulario_productos">
+                        <label for="imageproduct" class="form-label">Seleccionar imagen:</label>
+                        <input type="file" name="imageproduct" id="imageproduct" multiple>
+                    </div>
+                    <br>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary" style="background-color: rgb(30, 94, 105); border: none;">Guardar producto</button>
+                    </div>
+                    <br>
+                    
+                </div>
+            </form>
+        </div>
+
+</div>
+</div>
+ <script src="/js/formularioproducto.js"> </script>
+
+
+
+  <footer>
+    <!--FOOTER-->
+     <%- include("../partials/footer") %>
+     <!--FOOTER-->
+
+   </footer>
+
+ 
+</body>
+
+</html>

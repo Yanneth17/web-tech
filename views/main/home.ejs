@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head", {title: 'Inicio'}) %>  
+</head>
+
+
+
+<body>
+
+    <!--MENU-->
+    <header>
+        <%- include("../partials/header") %>
+    </header>
+    <!--MENU-->
+<div>
+    <main>
+        <br>
+        <br>
+        <div class="carousel">
+            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                   
+                  <a href="#ofertas"><img width="100px" height="380px" src="/img/porta.jpg"  class="d-block w-100" alt="..."> </a>
+                </div>
+                <div  class="carousel-item">
+                  <a href="#ofertas"> <img width="100px" height="380px" src="/img/ofertas2.jpg" class="d-block w-100" alt="..."></a>
+                </div>
+                <div class="carousel-item">
+                  <a href="#ofertas"> <img width="100px" height="380px" src="/img/ofertas3.jpg" class="d-block w-100" alt="..."></a>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+            
+            </div>
+
+<!--Vitrinas de producto-->
+
+        <section class="section_products_home">
+            <br>
+            <div class=" section-header-home ">
+                <h3>Bienvenidos</h3>
+                <a href="/detalle_producto ">Más información</a>
+            </div>
+            <br>
+            
+            <div class="container-fluid-home">
+                <% for (let producto of Allproductos) { %>
+                <div class="card-product-home">
+                    <div class="card-img-product-home">
+                         <a href="/products/detalle_producto/<%=producto.id %>">
+                        <img src="<%=producto.imagen%>" class="card-img-top-home" alt="Imagen de producto"></a>
+                    </div>
+                    <div class="card-body-home">
+                        <h4><%=producto.nombre %></h4>
+                        <p class="card-text "><%=producto.descuento %>% descuento</p>
+                        <div class="box-price ">
+                            <span class="price1 "><strike>$ <%=producto.precio %></strike></span>
+                            <span class="price2 "><b>  $<%=producto.precio - (producto.descuento * producto.precio / 100) %></b></span>
+                        </div>
+                        <!--Boton de compra-->
+                        <div class="wrapper-button-compra-home">
+                            <a href="/products/detalle_producto/<%=producto.id %>" class="button-compra ">Detalle producto</a>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+
+            <br>
+            <div class="section-header-home">
+                <h3>¡Destacados en la Tienda!</h3>
+                <h6>No lo dejes pasar.</h6>
+            </div>
+           <br>
+
+           <div class="container-fluid-home">
+            <% for (let producto of Allproductos) { %>
+            <div class="card-product-home">
+                <div class="card-img-product-home">
+                     <a href="/products/detalle_producto/<%=producto.id %>">
+                    <img src="<%=producto.imagen%>" class="card-img-top-home" alt="Imagen de producto"></a>
+                </div>
+                <div class="card-body-home">
+                    <h4><%=producto.nombre %></h4>
+                    <p class="card-text-home"><%=producto.descuento %>% descuento</p>
+                    <div class="box-price-home">
+                        <span class="price1-home"><strike>$ <%=producto.precio %></strike></span>
+                        <span class="price2-home"><b>$  $<%=producto.precio - (producto.descuento * producto.price / 100) %></b></span>
+                    </div>
+                    <!--Boton de compra-->
+                    <div class="wrapper-button-compra-home">
+                        <a href="/products/detalle_producto/<%=producto.id %>" class="button-compra ">Detalle producto</a>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+        </div>
+           
+        </section>
+
+    </main>
+</div>
+    
+
+<footer>
+
+<!--FOOTER-->
+ 
+<%- include("../partials/footer") %> 
+    
+<!--FOOTER-->
+
+</footer>
+    
+</body>
+
+</html>

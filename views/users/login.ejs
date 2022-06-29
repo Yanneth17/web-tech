@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include("../partials/head",{title: 'Ingresar'}) %>  
+    </head>
+
+  
+    <body id="body_login">
+ <!--MENU-->
+  <header>
+    <%- include("../partials/header") %>
+    
+</header>
+    <br>
+    <br>
+<!--MENU-->
+
+    <div class="contiene_login">
+
+       <br>
+
+        <form id="formularioingreso" class="login_formulario" action="/users/ingresoLogin" method="POST">
+            <h5>Inicia sesión con tu cuenta</h5>
+            <section class="seccion-ingresar">
+              <p class="text-center-login">Ingresa con</p>
+                  <div class="icon-ingresa-con">
+                      <ul class="">
+
+                          <li class="lista-iconos-login">
+                            <button class="btn btn-block btn-lg" id="button-lista-iconos-login">
+                              <span class="icon-clave-acceso"><a href="https://accounts.google.com/"><i class="fas fa-envelope-open-text fa-2x" style="color: black;" id="icon-facebook-img"></i></a></span>
+                              <a href="https://accounts.google.com/" class="palabra-clave-acceso">Recibir la clave de acceso rápido por mail</a>
+                            </button>
+                          </li>
+                    
+                          
+                          <li class="lista-iconos-login">
+                            <button class="btn btn-block btn-lg" id="button-lista-iconos-google">
+                                <span class="icon-google"><a href="https://accounts.google.com/"><img id="icon-google-img" src="https://patprimo.vteximg.com.br/arquivos/icon-google-login-min.png"></a></span>
+                                <a href="https://accounts.google.com/" class="palabra-google">Google</a>
+                            </button>
+                          </li>
+
+                          <li class="lista-iconos-login">
+                            <button class="btn btn-block btn-lg" id="button-lista-iconos-facebook" >                   
+                                <span class="icon-facebook"><a href="https://www.facebook.com/"><i class="fab fa-facebook fa-2x" id="icon-facebook-img"></i></a></span>
+                                <a href="https://www.facebook.com/" class="palabra-facebook">Facebook</a>
+                            </button>
+                          </li>
+
+                        </ul>
+                  </div>
+              <p class="text-center-login">O si lo prefieres, ingresa con</p>
+
+            <div class="form_content_login">
+              <div class="form_contenedor_login" >
+                
+                  <div class="form-group-email-email">
+                      <label id="label_login_email" for="emal">Correo electrónico</label>
+                      <input id="Correo" class="email account_input form-control" data-validate="isEmail" type="email" name="email" value="">
+                      
+                  </div>
+                  <div class="form-group-password">
+                      <label id="label_login_email" for="password">Contraseña</label>
+                      <input id="pass" class="password account_input form-control" type="password" data-validate="isPasswd" name="password" value="">
+                  </div>
+                  <p><a href="#" title="Recuperar su contraseña olvidada" rel="nofollow">¿Olvidó su contraseña?</a></p>
+                </div>
+
+              <div class="submit-botton-inicia-sesion">
+                <input type="hidden" class="hidden" name="back" value="">
+                    <button type="submit" name="SubmitLogin" class="btn">
+                    Iniciar sesión
+                    </button>
+              </div>
+          </div>
+            </section>
+        
+            <div class="submit-botton-registrate">
+               <h6>¿No tienes una cuenta?</h6>
+               <a href="/users/register" class="btn">Regístrate</a>
+            </div>
+        </form>
+        <script src="/js/formularioingreso.js"> </script>
+        <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+    </div>
+   <!--FOOTER-->
+   <%- include("../partials/footer") %> 
+   <!--FOOTER-->
+    </body>
+</html>

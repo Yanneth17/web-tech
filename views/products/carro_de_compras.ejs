@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <%- include("../partials/head", {title: 'Tu Carrito'}) %>  
+    </head>
+
+    
+
+<body>
+         <!--MENU-->
+    <header>
+      <%- include("../partials/header") %>
+    </header>
+<!--MENU-->
+
+
+<div class="carrito">
+  <br>
+  <br>
+  <br>
+<table class="table table-carrito">
+  <thead>
+    <tr class="text-success">
+      <th scope="col"></th>
+      <th scope="col">Producto</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Cantidad</th>
+    </tr>
+  </thead>
+  <tbody id="carro">
+    
+  </tbody>
+</table>
+<br>
+<br>
+<div class="row mx-4">
+  <div class="col"> 
+<h3 class="carritoTotal">Total:</h3>
+  </div>
+<div class="col d-flex justify-content-end">
+  <button class="btn btn-success">Comprar</button>
+</div>
+</div>
+</div>
+        
+
+<!--FOOTER-->
+<%- include("../partials/footer") %> 
+<!--FOOTER-->
+<script src="/js/cantidad.js"></script>
+    </body>
+    

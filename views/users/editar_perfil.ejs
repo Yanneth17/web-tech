@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head", {title: usuarios}) %>  
+</head>
+
+
+<body>
+<div>
+
+<!--MENU-->
+<header>
+	<%- include("../partials/header") %>
+</header>
+<!--MENU-->
+
+<main class="main_register">
+
+    <div class="container_register">
+        <br>
+        
+        <form class="form_container_register" action="/users/editar_perfil/<%= usuarios.id %>?_method=PUT" method="POST"> 
+            <h4 class="form_title_register"> Sus Datos Personales</h4>
+            <p class="form_paragraph">Por favor actualice su información personal si ésta ha cambiado.</p>
+
+            <div class="form_container_subregister" action="/users/nuevousuario" method="POST">
+                <div class="form_group_register">
+                    <label for="name" class="form_label">Nombre(s): <sup>*</sup></label>
+                    <input type="text" id="name" name="nombres" class="form_input" value="<%=usuarios.nombre %>" placeholder=" ">
+                </div>
+
+                <div class="form_group_register">
+                    <label for="name" class="form_label">Apellido(s): <sup>*</sup></label>
+                    <input type="text" id="name" name="apellidos" class="form_input" value="<%=usuarios.apellido %>" placeholder=" ">
+                </div>
+
+                <div class="form_group_register_id">
+                    <div class="document_type_col">
+                        <div class="selector" id="uniform-document_type"><label>Tipo de documento:</label>
+                            <select id="selector_type_id" name="tipo_documento" value="<%=usuarios.tipo_documento %>" class="form_input">
+                                <option value="select" disabled="disabled" >Seleccionar</option>
+                                <option value="cedula_ciudadania" <%= usuarios.tipo_documento === 'cedula_ciudadania' ? 'selected' : '' ; %>>Cedula Ciudadania&nbsp;&nbsp;</option>
+                                <option value='DNI' <%= usuarios.DNI === 'DNI' ? 'selected' : '' ; %> >DNI&nbsp;&nbsp;</option>
+                                <option value="tarjeta_identidad" <%= usuarios.tipo_documento === 'tarjeta_identidad' ? 'selected' : '' ; %>>Tarjeta Identidad&nbsp;&nbsp;</option>
+                                <option value="cedula_extranjeria" <%= usuarios.tipo_documento === 'cedula_extranjeria' ? 'selected' : '' ; %>>Cedula Extranjeria&nbsp;&nbsp;</option>
+                                <option value="pasaporte" <%= usuarios.tipo_documento === 'pasaporte' ? 'selected' : '' ; %>>Pasaporte&nbsp;&nbsp;</option>
+                                <option value="nit" <%= usuarios.tipo_documento === 'nit' ? 'selected' : '' ; %>>NIT&nbsp;&nbsp;</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="dni_col col-xs-6 form-error">
+                        <label for="dni">Nº de identificación: <sup>*</sup></label>
+                        <input type="text" class="form_input" data-validate="isDniLite" name="dni" id="dni" value="<%=usuarios.dni %>" autocomplete="off">
+                    </div>
+                </div>
+
+                <div class="form_group_register_date">
+                    <label for="user" name="birth_date" class="form_label">Fecha de Nacimiento: <sup>*</sup></label>
+                    <div class="form_fecha_nacimiento">
+                        <div class="col-xs-4">
+                            <div class="selector" id="uniform-days" style="width: 86px;">
+                                <select id="days" name="days" value="<%=usuarios.dia%>" class="is_required form_input">
+                                    <option value="<%=usuarios.dia %>"><%=usuarios.dia %></option>
+                                    <option value="1" <%= usuarios.dia === '1' ? 'selected' : '' ; %>>1&nbsp;&nbsp;</option>
+                                    <option value="2" <%= usuarios.dia === '2' ? 'selected' : '' ; %>>2&nbsp;&nbsp;</option>
+                                    <option value="3" <%= usuarios.dia === '3' ? 'selected' : '' ; %>>3&nbsp;&nbsp;</option>
+                                    <option value="4" <%= usuarios.dia === '4' ? 'selected' : '' ; %>>4&nbsp;&nbsp;</option>
+                                    <option value="5" <%= usuarios.dia === '5' ? 'selected' : '' ; %>>5&nbsp;&nbsp;</option>
+                                    <option value="6" <%= usuarios.dia === '6' ? 'selected' : '' ; %>>6&nbsp;&nbsp;</option>
+                                    <option value="7" <%= usuarios.dia === '7' ? 'selected' : '' ; %>>7&nbsp;&nbsp;</option>
+                                    <option value="8" <%= usuarios.dia === '8' ? 'selected' : '' ; %>>8&nbsp;&nbsp;</option>
+                                    <option value="9" <%= usuarios.dia === '9' ? 'selected' : '' ; %>>9&nbsp;&nbsp;</option>
+                                    <option value="10" <%= usuarios.dia === '10' ? 'selected' : '' ; %>>10&nbsp;&nbsp;</option>
+                                    <option value="11" <%= usuarios.dia === '11' ? 'selected' : '' ; %>>11&nbsp;&nbsp;</option>
+                                    <option value="12" <%= usuarios.dia === '12' ? 'selected' : '' ; %>>12&nbsp;&nbsp;</option>
+                                    <option value="13" <%= usuarios.dia === '13' ? 'selected' : '' ; %>>13&nbsp;&nbsp;</option>
+                                    <option value="14" <%= usuarios.dia === '14' ? 'selected' : '' ; %>>14&nbsp;&nbsp;</option>
+                                    <option value="15" <%= usuarios.dia === '15' ? 'selected' : '' ; %>>15&nbsp;&nbsp;</option>
+                                    <option value="16" <%= usuarios.dia === '16' ? 'selected' : '' ; %>>16&nbsp;&nbsp;</option>
+                                    <option value="17" <%= usuarios.dia === '17' ? 'selected' : '' ; %>>17&nbsp;&nbsp;</option>
+                                    <option value="18" <%= usuarios.dia === '18' ? 'selected' : '' ; %>>18&nbsp;&nbsp;</option>
+                                    <option value="19" <%= usuarios.dia === '19' ? 'selected' : '' ; %>>19&nbsp;&nbsp;</option>
+                                    <option value="20" <%= usuarios.dia === '20' ? 'selected' : '' ; %>>20&nbsp;&nbsp;</option>
+                                    <option value="21" <%= usuarios.dia === '21' ? 'selected' : '' ; %>>21&nbsp;&nbsp;</option>
+                                    <option value="22" <%= usuarios.dia === '22' ? 'selected' : '' ; %>>22&nbsp;&nbsp;</option>
+                                    <option value="23" <%= usuarios.dia === '23' ? 'selected' : '' ; %>>23&nbsp;&nbsp;</option>
+                                    <option value="24" <%= usuarios.dia === '24' ? 'selected' : '' ; %>>24&nbsp;&nbsp;</option>
+                                    <option value="25" <%= usuarios.dia === '25' ? 'selected' : '' ; %>>25&nbsp;&nbsp;</option>
+                                    <option value="26" <%= usuarios.dia === '26' ? 'selected' : '' ; %>>26&nbsp;&nbsp;</option>
+                                    <option value="27" <%= usuarios.dia === '27' ? 'selected' : '' ; %>>27&nbsp;&nbsp;</option>
+                                    <option value="28" <%= usuarios.dia === '28' ? 'selected' : '' ; %>>28&nbsp;&nbsp;</option>
+                                    <option value="29" <%= usuarios.dia === '29' ? 'selected' : '' ; %>>29&nbsp;&nbsp;</option>
+                                    <option value="30" <%= usuarios.dia === '30' ? 'selected' : '' ; %>>30&nbsp;&nbsp;</option>
+                                    <option value="31" <%= usuarios.dia === '31' ? 'selected' : '' ; %>>31&nbsp;&nbsp;</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="selector" id="uniform-months" style="width: 100px;">
+                                <select id="months" name="months" value=" " class="is_required form_input">
+                                            <option value="0">-</option>
+                                            <option value="Enero" <%= usuarios.mes === 'Enero' ? 'selected' : '' ; %>>Enero&nbsp;&nbsp;</option>
+                                            <option value="Febrero" <%= usuarios.mes === 'Febrero' ? 'selected' : '' ; %>>Febrero&nbsp;&nbsp;</option>
+                                            <option value="Marzo" <%= usuarios.mes === 'Marzo' ? 'selected' : '' ; %>>Marzo&nbsp;&nbsp;</option>
+                                            <option value="Abril" <%= usuarios.mes === 'Abril' ? 'selected' : '' ; %>>Abril&nbsp;&nbsp;</option>
+                                            <option value="Mayo" <%= usuarios.mes === 'Mayo' ? 'selected' : '' ; %>>Mayo&nbsp;&nbsp;</option>
+                                            <option value="Junio" <%= usuarios.mes === 'Junio' ? 'selected' : '' ; %>>Junio&nbsp;&nbsp;</option>
+                                            <option value="Julio" <%= usuarios.mes === 'Julio' ? 'selected' : '' ; %>>Julio&nbsp;&nbsp;</option>
+                                            <option value="Agosto" <%= usuarios.mes === 'Agosto' ? 'selected' : '' ; %>>Agosto&nbsp;&nbsp;</option>
+                                            <option value="Septiembre" <%= usuarios.mes === 'Septiembre' ? 'selected' : '' ; %>>Septiembre&nbsp;&nbsp;</option>
+                                            <option value="Octubre" <%= usuarios.mes === 'Octubre' ? 'selected' : '' ; %>>Octubre&nbsp;&nbsp;</option>
+                                            <option value="Noviembre" <%= usuarios.mes === 'Noviembre' ? 'selected' : '' ; %>>Noviembre&nbsp;&nbsp;</option>
+                                            <option value="Diciembre" <%= usuarios.mes === 'Diciembre' ? 'selected' : '' ; %>>Diciembre&nbsp;&nbsp;</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="selector" id="uniform-years" style="width: 86px;">
+                                <select id="years" name="years" value=" " class="is_required form_input">
+                                            <option value="<%=usuarios.year%>"><%=usuarios.year%></option>
+                                            <option value="2022" <%= usuarios.year === '2022' ? 'selected' : '' ; %>>2022&nbsp;&nbsp;</option>
+                                            <option value="2021" <%= usuarios.year === '2021' ? 'selected' : '' ; %>>2021&nbsp;&nbsp;</option>
+                                            <option value="2020" <%= usuarios.year === '2020' ? 'selected' : '' ; %>>2020&nbsp;&nbsp;</option>
+                                            <option value="2019" <%= usuarios.year === '2019' ? 'selected' : '' ; %>>2019&nbsp;&nbsp;</option>
+                                            <option value="2018" <%= usuarios.year === '2018' ? 'selected' : '' ; %>>2018&nbsp;&nbsp;</option>
+                                            <option value="2017" <%= usuarios.year === '2017' ? 'selected' : '' ; %>>2017&nbsp;&nbsp;</option>
+                                            <option value="2016" <%= usuarios.year === '2016' ? 'selected' : '' ; %>>2016&nbsp;&nbsp;</option>
+                                            <option value="2015" <%= usuarios.year === '2015' ? 'selected' : '' ; %>>2015&nbsp;&nbsp;</option>
+                                            <option value="2014" <%= usuarios.year === '2014' ? 'selected' : '' ; %>>2014&nbsp;&nbsp;</option>
+                                            <option value="2013" <%= usuarios.year === '2013' ? 'selected' : '' ; %>>2013&nbsp;&nbsp;</option>
+                                            <option value="2012" <%= usuarios.year === '2012' ? 'selected' : '' ; %>>2012&nbsp;&nbsp;</option>
+                                            <option value="2011" <%= usuarios.year === '2011' ? 'selected' : '' ; %>>2011&nbsp;&nbsp;</option>
+                                            <option value="2010" <%= usuarios.year === '2010' ? 'selected' : '' ; %>>2010&nbsp;&nbsp;</option>
+                                            <option value="2009" <%= usuarios.year === '2009' ? 'selected' : '' ; %>>2009&nbsp;&nbsp;</option>
+                                            <option value="2008" <%= usuarios.year === '2008' ? 'selected' : '' ; %>>2008&nbsp;&nbsp;</option>
+                                            <option value="2007" <%= usuarios.year === '2007' ? 'selected' : '' ; %>>2007&nbsp;&nbsp;</option>
+                                            <option value="2006" <%= usuarios.year === '2006' ? 'selected' : '' ; %>>2006&nbsp;&nbsp;</option>
+                                            <option value="2005" <%= usuarios.year === '2005' ? 'selected' : '' ; %>>2005&nbsp;&nbsp;</option>
+                                            <option value="2004" <%= usuarios.year === '2004' ? 'selected' : '' ; %>>2004&nbsp;&nbsp;</option>
+                                            <option value="2003" <%= usuarios.year === '2003' ? 'selected' : '' ; %>>2003&nbsp;&nbsp;</option>
+                                            <option value="2002" <%= usuarios.year === '2002' ? 'selected' : '' ; %>>2002&nbsp;&nbsp;</option>
+                                            <option value="2001" <%= usuarios.year === '2001' ? 'selected' : '' ; %>>2001&nbsp;&nbsp;</option>
+                                            <option value="2000" <%= usuarios.year === '2000' ? 'selected' : '' ; %>>2000&nbsp;&nbsp;</option>
+                                            <option value="1999" <%= usuarios.year === '1999' ? 'selected' : '' ; %>>1999&nbsp;&nbsp;</option>
+                                            <option value="1998" <%= usuarios.year === '1998' ? 'selected' : '' ; %>>1998&nbsp;&nbsp;</option>
+                                            <option value="1997" <%= usuarios.year === '1997' ? 'selected' : '' ; %>>1997&nbsp;&nbsp;</option>
+                                            <option value="1996" <%= usuarios.year === '1996' ? 'selected' : '' ; %>>1996&nbsp;&nbsp;</option>
+                                            <option value="1995" <%= usuarios.year === '1995' ? 'selected' : '' ; %>>1995&nbsp;&nbsp;</option>
+                                            <option value="1994" <%= usuarios.year === '1994' ? 'selected' : '' ; %>>1994&nbsp;&nbsp;</option>
+                                            <option value="1993" <%= usuarios.year === '1993' ? 'selected' : '' ; %>>1993&nbsp;&nbsp;</option>
+                                            <option value="1992" <%= usuarios.year === '1992' ? 'selected' : '' ; %>>1992&nbsp;&nbsp;</option>
+                                            <option value="1991" <%= usuarios.year === '1991' ? 'selected' : '' ; %>>1991&nbsp;&nbsp;</option>
+                                            <option value="1990" <%= usuarios.year === '1990' ? 'selected' : '' ; %>>1990&nbsp;&nbsp;</option>
+                                            <option value="1989" <%= usuarios.year === '1989' ? 'selected' : '' ; %>>1989&nbsp;&nbsp;</option>
+                                            <option value="1988" <%= usuarios.year === '1988' ? 'selected' : '' ; %>>1988&nbsp;&nbsp;</option>
+                                            <option value="1987" <%= usuarios.year === '1987' ? 'selected' : '' ; %>>1987&nbsp;&nbsp;</option>
+                                            <option value="1986" <%= usuarios.year === '1986' ? 'selected' : '' ; %>>1986&nbsp;&nbsp;</option>
+                                            <option value="1985" <%= usuarios.year === '1985' ? 'selected' : '' ; %>>1985&nbsp;&nbsp;</option>
+                                            <option value="1984" <%= usuarios.year === '1984' ? 'selected' : '' ; %>>1984&nbsp;&nbsp;</option>
+                                            <option value="1983" <%= usuarios.year === '1983' ? 'selected' : '' ; %>>1983&nbsp;&nbsp;</option>
+                                            <option value="1982" <%= usuarios.year === '1982' ? 'selected' : '' ; %>>1982&nbsp;&nbsp;</option>
+                                            <option value="1981" <%= usuarios.year === '1981' ? 'selected' : '' ; %>>1981&nbsp;&nbsp;</option>
+                                            <option value="1980" <%= usuarios.year === '1980' ? 'selected' : '' ; %>>1980&nbsp;&nbsp;</option>
+                                            <option value="1979" <%= usuarios.year === '1979' ? 'selected' : '' ; %>>1979&nbsp;&nbsp;</option>
+                                            <option value="1978" <%= usuarios.year === '1978' ? 'selected' : '' ; %>>1978&nbsp;&nbsp;</option>
+                                            <option value="1977" <%= usuarios.year === '1977' ? 'selected' : '' ; %>>1977&nbsp;&nbsp;</option>
+                                            <option value="1976" <%= usuarios.year === '1976' ? 'selected' : '' ; %>>1976&nbsp;&nbsp;</option>
+                                            <option value="1975" <%= usuarios.year === '1975' ? 'selected' : '' ; %>>1975&nbsp;&nbsp;</option>
+                                            <option value="1974" <%= usuarios.year === '1974' ? 'selected' : '' ; %>>1974&nbsp;&nbsp;</option>
+                                            <option value="1973" <%= usuarios.year === '1973' ? 'selected' : '' ; %>>1973&nbsp;&nbsp;</option>
+                                            <option value="1972" <%= usuarios.year === '1972' ? 'selected' : '' ; %>>1972&nbsp;&nbsp;</option>
+                                            <option value="1971" <%= usuarios.year === '1971' ? 'selected' : '' ; %>>1971&nbsp;&nbsp;</option>
+                                            <option value="1970" <%= usuarios.year === '1970' ? 'selected' : '' ; %>>1970&nbsp;&nbsp;</option>
+                                            <option value="1969" <%= usuarios.year === '1969' ? 'selected' : '' ; %>>1969&nbsp;&nbsp;</option>
+                                            <option value="1968" <%= usuarios.year === '1968' ? 'selected' : '' ; %>>1968&nbsp;&nbsp;</option>
+                                            <option value="1967" <%= usuarios.year === '1967' ? 'selected' : '' ; %>>1967&nbsp;&nbsp;</option>
+                                            <option value="1966" <%= usuarios.year === '1966' ? 'selected' : '' ; %>>1966&nbsp;&nbsp;</option>
+                                            <option value="1965" <%= usuarios.year === '1965' ? 'selected' : '' ; %>>1965&nbsp;&nbsp;</option>
+                                            <option value="1964" <%= usuarios.year === '1964' ? 'selected' : '' ; %>>1964&nbsp;&nbsp;</option>
+                                            <option value="1963" <%= usuarios.year === '1963' ? 'selected' : '' ; %>>1963&nbsp;&nbsp;</option>
+                                            <option value="1962" <%= usuarios.year === '1962' ? 'selected' : '' ; %>>1962&nbsp;&nbsp;</option>
+                                            <option value="1961" <%= usuarios.year === '1961' ? 'selected' : '' ; %>>1961&nbsp;&nbsp;</option>
+                                            <option value="1960" <%= usuarios.year === '1960' ? 'selected' : '' ; %>>1960&nbsp;&nbsp;</option>
+                                            <option value="1959" <%= usuarios.year === '1959' ? 'selected' : '' ; %>>1959&nbsp;&nbsp;</option>
+                                            <option value="1958" <%= usuarios.year === '1958' ? 'selected' : '' ; %>>1958&nbsp;&nbsp;</option>
+                                            <option value="1957" <%= usuarios.year === '1957' ? 'selected' : '' ; %>>1957&nbsp;&nbsp;</option>
+                                            <option value="1956" <%= usuarios.year === '1956' ? 'selected' : '' ; %>>1956&nbsp;&nbsp;</option>
+                                            <option value="1955" <%= usuarios.year === '1955' ? 'selected' : '' ; %>>1955&nbsp;&nbsp;</option>
+                                            <option value="1954" <%= usuarios.year === '1954' ? 'selected' : '' ; %>>1954&nbsp;&nbsp;</option>
+                                            <option value="1953" <%= usuarios.year === '1953' ? 'selected' : '' ; %>>1953&nbsp;&nbsp;</option>
+                                            <option value="1952" <%= usuarios.year === '1952' ? 'selected' : '' ; %>>1952&nbsp;&nbsp;</option>
+                                            <option value="1951" <%= usuarios.year === '1951' ? 'selected' : '' ; %>>1951&nbsp;&nbsp;</option>
+                                            <option value="1950" <%= usuarios.year === '1950' ? 'selected' : '' ; %>>1950&nbsp;&nbsp;</option>
+                                            <option value="1949" <%= usuarios.year === '1949' ? 'selected' : '' ; %>>1949&nbsp;&nbsp;</option>
+                                            <option value="1948" <%= usuarios.year === '1948' ? 'selected' : '' ; %>>1948&nbsp;&nbsp;</option>
+                                            <option value="1947" <%= usuarios.year === '1947' ? 'selected' : '' ; %>>1947&nbsp;&nbsp;</option>
+                                            <option value="1946" <%= usuarios.year === '1946' ? 'selected' : '' ; %>>1946&nbsp;&nbsp;</option>
+                                            <option value="1945" <%= usuarios.year === '1945' ? 'selected' : '' ; %>>1945&nbsp;&nbsp;</option>
+                                            <option value="1944" <%= usuarios.year === '1944' ? 'selected' : '' ; %>>1944&nbsp;&nbsp;</option>
+                                            <option value="1943" <%= usuarios.year === '1943' ? 'selected' : '' ; %>>1943&nbsp;&nbsp;</option>
+                                            <option value="1942" <%= usuarios.year === '1942' ? 'selected' : '' ; %>>1942&nbsp;&nbsp;</option>
+                                            <option value="1941" <%= usuarios.year === '1941' ? 'selected' : '' ; %>>1941&nbsp;&nbsp;</option>
+                                            <option value="1940" <%= usuarios.year === '1940' ? 'selected' : '' ; %>>1940&nbsp;&nbsp;</option>
+                                    </select>
+                                </div>
+                        </div>
+                   </div>
+                </div>
+
+                <div class="form_group_register">
+                    <label for="email" class="form_label">Email: <sup>*</sup></label>
+                    <input type="email" id="email" name="email" value="<%=usuarios.email%>" class="form_input" placeholder=" ">
+                    
+                </div>
+
+                <div class="form_group_register">
+                    <label for="tel" class="form_label">Celular: </label>
+                    <input type="tel" id="tel" name="tel" value="<%=usuarios.telefono%>" class="form_input" placeholder=" ">
+                </div>
+
+                <div class="form_group_register">
+                    <label for="dir" class="form_label">Dirección: </label>
+                    <input type="text" id="dir" name="dir" value="<%=usuarios.direccion%>" class="form_input" placeholder=" ">
+                </div>
+<!--
+                <div class="form_group_register">
+                    <label for="password" class="form_label">Nueva Contraseña: <sup>*</sup></label>
+                    <input type="password" id="password" name="password" value="" class="form_input" placeholder=" ">
+                </div>
+
+                <div class="form_group_register">
+                    <label for="password" class="form_label">Repetir Contraseña <sup>*</sup></label>
+                    <input type="password" id="password" name="password2" value="" class="form_input" placeholder=" ">
+                </div>
+-->
+                <input class="form_register_input" name="" type="submit" value="Enviar actualización"></input>
+                <a href="/users/mi_cuenta/<%=usuarios.id %>" class="btn">Volver a tu cuenta</a>
+            </div>
+
+        </form>
+
+    </div>
+
+    <div class="container2_register">
+        <img src="/img/users/god-of-war-editar-perfil.jpg" alt="Imagen de Registro">
+    </div>
+
+    </main>
+    
+
+      <!--FOOTER-->
+    
+
+    <%- include("../partials/footer") %>  
+  
+    
+    <!--FOOTER-->
+
+</body>
+
+</html>

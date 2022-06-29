@@ -1,0 +1,71 @@
+«<!DOCTYPE html>
+<html lang="en">
+
+<!-- Include Head -->
+<head>
+    <%- include("../partials/head", {title: "productos.nombre"}) %>
+</head>
+<body>
+	<!-- Header -->
+	<header>
+	<%- include("../partials/header") %>
+    </header>
+	<!-- /Header -->
+
+	<!-- todos los productos -->
+	<br>
+	<br>
+	<br>
+	<br>
+		<div class=" section-header-home ">
+			<h3>Todos los Productos</h3>
+		</div>
+		<br>
+
+	<div class="cont_vitrinas_categorias">
+		<div class="cont_ul_categorias">
+				<ul class="nav_vitrina_categorias">
+					<li><a href="/products/vitrina_productos">Todos los productos</a></li>
+                    <li><a href="/products/vitrina_tv">Televisores</a></li>
+                    <li><a href="/products/vitrina_cel">Celulares</a></li>
+                    <li><a href="/products/vitrina_computadoras">Computadoras</a></li>
+                    <li><a href="/products/vitrina_videojuegos">Videojuegos</a></li>
+                    <li><a href="/products/vitrina_pcGamer">Pc Gamer</a></li>
+                    <li><a href="/products/vitrina_audio">Auriculares, parlantes y audio</a></li> 
+			   </ul>
+		</div>
+		
+		<div class="container-fluid-home">
+			<% for (let producto of Allproductos) { %>
+			<div class="card-product-home">
+				<div class="card-img-product-home">
+					 <a href="/products/detalle_producto/<%=producto.id%>">
+					<img src="<%=producto.imagen%>" class="card-img-top-home" alt="Imagen de producto"></a>
+				</div>
+				<div class="card-body-home">
+					<h4><%=producto.nombre %></h4>
+					<p class="card-text "><%=producto.descuento %>% descuento</p>
+					<div class="box-price ">
+						<span class="price1 "><strike>$ <%=producto.precio %></strike></span>
+						<span class="price2 "><b>$  $<%=producto.precio - (producto.descuento * producto.precio / 100) %></b></span>
+					</div>
+					<!--Boton de compra-->
+					<div class="wrapper-button-compra-vitrina">
+						<a href="/products/detalle_producto/<%=producto.id %>" class="button-detalle-product">Añadir</a>
+					</div>
+				</div>
+			</div>
+			<% } %>
+		</div>
+	</div>
+
+
+	<!-- /todos los productos -->
+
+	<!-- footer -->
+	<footer>
+		<%- include("../partials/footer") %>  
+    </footer>
+	<!-- /footer -->
+</body>	
+</html>

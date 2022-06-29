@@ -1,0 +1,186 @@
+[
+ {
+  "id": 1,
+  "inventario": 3,
+  "id_categoriaFK": "",
+  "id_marcaFK": 2,
+  "imagen": "1646196765132tv.webp",
+  "categorias": {
+   "id": 1,
+   "nombre": "Televisores",
+   "id_departamentoFK": 1
+  },
+  "marcas": {
+   "id": 2,
+   "nombre": "LG"
+  },
+  "especificaciones": [
+   {
+    "id": 4,
+    "tipo": "Tamaño pantalla",
+    "valor": "50 Pulgadas",
+    "productos_especificaciones": {
+     "id_especificacionFK": 4,
+     "id_productoFK": 1
+    }
+   }
+  ]
+ },
+ {
+  "id": 2,
+  "nombre": "TV samsung 50\" QLED UHD 4K Smart",
+  "precio": 670,
+  "descuento": 5,
+  "inventario": 7,
+  "id_categoriaFK": 1,
+  "id_marcaFK": 1,
+  "descripcion": "TV 50 Pulgadas QLED UHD 4K Smart Q60A",
+  "imagen": "16499009037871649898860352img-tv-samsung-smart.jpg",
+  "categorias": {
+   "id": 1,
+   "nombre": "Televisores",
+   "id_departamentoFK": 1
+  },
+  "marcas": {
+   "id": 1,
+   "nombre": "Samsung"
+  },
+  "especificaciones": [
+   {
+    "id": 4,
+    "tipo": "Tamaño pantalla",
+    "valor": "50 Pulgadas",
+    "productos_especificaciones": {
+     "id_especificacionFK": 4,
+     "id_productoFK": 2
+    }
+   }
+  ]
+ },
+ {
+  "id": 3,
+  "nombre": "Celular SAMSUNG Galaxy A03",
+  "precio": 456,
+  "descuento": 15,
+  "inventario": 10,
+  "id_categoriaFK": 2,
+  "id_marcaFK": 1,
+  "descripcion": "Celular SAMSUNG Galaxy A03 Core 32GB Negro, Con la pantalla Infinity-V de 6.5\" los contenidos se ven más nítidos, definidos y claros, Tiene una batería de 5.000 mAh (típica) que permite disfrutar del dispositivo durante horas y horas",
+  "imagen": "celulargalaxy.webp",
+  "categorias": {
+   "id": 2,
+   "nombre": "Celulares",
+   "id_departamentoFK": 3
+  },
+  "marcas": {
+   "id": 1,
+   "nombre": "Samsung"
+  },
+  "especificaciones": []
+ },
+ {
+  "id": 4,
+  "nombre": "Celular SAMSUNG Galaxy A32 128GB Azul",
+  "precio": 245,
+  "descuento": 5,
+  "inventario": null,
+  "id_categoriaFK": 2,
+  "id_marcaFK": 1,
+  "descripcion": "Mantente siempre conectado con tu Galaxy A32, gracias a su batería de 5000 mAh. Cuenta con una memoria RAM de 4GB y alto almacenamiento de 128GB que te permite disfrutar tus aplicaciones ágilmente y llevar contigo la información que necesites. Su display de 6.4 pulgadas te permite tener una experiencia visual inigualable con el mejor contenido.",
+  "imagen": "16498979977761649893427941galaxy_A32.jfif",
+  "categorias": {
+   "id": 2,
+   "nombre": "Celulares",
+   "id_departamentoFK": 3
+  },
+  "marcas": {
+   "id": 1,
+   "nombre": "Samsung"
+  },
+  "especificaciones": []
+ },
+ {
+  "id": 5,
+  "nombre": "Celular SAMSUNG Galaxy A22 Verde",
+  "precio": 220,
+  "descuento": 10,
+  "inventario": 10,
+  "id_categoriaFK": 2,
+  "id_marcaFK": 1,
+  "descripcion": "Mantente siempre conectado con tu Galaxy A22, gracias a su batería de 5000 mAh. Cuenta con una memoria RAM de 4GB y alto almacenamiento de 128GB que te permite disfrutar tus aplicaciones ágilmente y llevar contigo la información que necesites. Su display de 6.4 pulgadas te permite tener una experiencia visual inigualable con el mejor contenido.",
+  "imagen": "celular.jpg",
+  "categorias": {
+   "id": 2,
+   "nombre": "Celulares",
+   "id_departamentoFK": 3
+  },
+  "marcas": {
+   "id": 1,
+   "nombre": "Samsung"
+  },
+  "especificaciones": []
+ },
+ {
+  "id": 6,
+  "nombre": "Samsung A32",
+  "precio": 200,
+  "descuento": 10,
+  "inventario": 10,
+  "id_categoriaFK": 2,
+  "id_marcaFK": 1,
+  "descripcion": "Samsung A32",
+  "imagen": "16498979977761649893427941galaxy_A32.jfif",
+  "categorias": {
+   "id": 2,
+   "nombre": "Celulares",
+   "id_departamentoFK": 3
+  },
+  "marcas": {
+   "id": 1,
+   "nombre": "Samsung"
+  },
+  "especificaciones": []
+ },
+ {
+  "id": 7,
+  "nombre": "TV samsung 50\" QLED UHD 4K Smart ",
+  "precio": 400,
+  "descuento": 13,
+  "inventario": 5,
+  "id_categoriaFK": 1,
+  "id_marcaFK": 1,
+  "descripcion": "TV samsung 50\" QLED UHD 4K Smart ",
+  "imagen": "1649898860352img-tv-samsung-smart.jpg",
+  "categorias": {
+   "id": 1,
+   "nombre": "Televisores",
+   "id_departamentoFK": 1
+  },
+  "marcas": {
+   "id": 1,
+   "nombre": "Samsung"
+  },
+  "especificaciones": []
+ },
+ {
+  "id": 8,
+  "nombre": "TV samsung 50\" QLED UHD 4K Smart ",
+  "precio": 400,
+  "descuento": 40,
+  "inventario": 10,
+  "id_categoriaFK": 1,
+  "id_marcaFK": 1,
+  "descripcion": "TV samsung 50\" QLED UHD 4K Smart ",
+  "imagen": "16499009037871649898860352img-tv-samsung-smart.jpg",
+  "categorias": {
+   "id": 1,
+   "nombre": "Televisores",
+   "id_departamentoFK": 1
+  },
+  "marcas": {
+   "id": 1,
+   "nombre": "Samsung"
+  },
+  "especificaciones": []
+ }
+]

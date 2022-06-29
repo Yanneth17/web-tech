@@ -1,0 +1,43 @@
+<header class="cont-header">
+
+    <div class="top-header d-flex justify-content-between">
+        <a href="/"><img class="logo" width="100px" height="65px" src="/img/logotech.JPG" alt="logo-tech"></a>
+        
+        <div class="menu_hamburguesa">
+        <button class="btn-toggle-navbar">
+			<i class="fas fa-bars" id="btn-toggle-navbar"></i>
+        </button>
+
+        <nav class="nav_header">
+            <ul class="menu_header">
+                <li><a href="/">Inicio</a></li>
+                <li><a href="">Productos</a>
+                    <ul class="nav_desplegable">
+                         <li><a href="/products/vitrina_productos">Todos los productos</a></li>
+                         <li><a href="">Computadoras</a></li>
+                         <li><a href="">Televisores</a></li>
+                         <li><a href="">Smartphones</a></li>
+                         <li><a href="">Pc Gamer armada</a></li>
+                         <li><a href="">Consolas</a></li>
+                         <li><a href="">Auriculares, parlantes y audio</a></li>
+                         <li><a href="">Conectividad</a></li>
+                         <li><a href="">Electrodomesticos</a></li>
+                    </ul></li>
+                <li><a href="">Acerca</a></li>
+                <li><a href="/products/crear_producto">Cargar Producto</a></li>
+                <li><a href="/users/mi_cuenta/<%=usuarios.id %>" > Mi cuenta</a></li>
+                <li><a href="/products/carro_de_compras">Carrito<i class="fa-regular fa-cart-shopping fa-1x" style="color: black"></i></a></li>
+            </ul>
+        </nav>
+
+    </div>
+
+        <div class="search-form">
+            <form action="/search" method="GET" class=" search-form ">
+                <input class="input_buscador" type="search " placeholder="Buscar Producto" aria-label="Search ">
+                <button class="btn btn-outline-success m-1 " type="submit "><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+
+</header>

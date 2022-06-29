@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include("../partials/head",{title: 'Ingresar'}) %>  
+    </head>
+
+ <!--MENU-->
+    <header>
+    <%- include("../partials/headerSessionini") %>
+    
+    </header>
+    <br>
+    <br>
+<!--MENU-->
+
+
+
+
+<body>
+   
+    <div class="mi_cuenta">
+  
+    <div class="contenedor_mi_cuenta">
+  
+      <div>
+        <h4>Mi Cuenta</h4>
+        <h4><%=usuarios.nombre%></h4>
+          <div class="card-img-perfil">
+            <a href="/users/mi_cuenta/<%=usuarios.id %>">
+            <img src="/img/users/<%=usuarios.img_perfil %>" class="card-img-perfil" alt="Imagen de perfil" width="60px" height="60px"></a>
+          </div>
+      </div>
+  
+      <br>
+      
+      <ul class="contenedor_lista-iconos-mi-cuenta">
+  
+          <li class="lista-iconos-mi-cuenta">
+              <i class="fa fa-cart-arrow-down" style="color: rgb(70, 70, 70);"></i>
+              <button class="btn btn-block btn-lg" id="cont_titulos_mi_cuenta">
+                <strong class="titulos_mi_cuenta"> Mis pedidos </strong> 
+                <a href="" class="subtitulos_mi_cuenta">Historial de pedidos</a>
+              </button>
+          </li>
+          <li class="lista-iconos-mi-cuenta">
+              <i class="fas fa-heart" style="color: rgb(70, 70, 70);"></i>
+              <button class="btn btn-block btn-lg" id="cont_titulos_mi_cuenta">
+                <strong class="titulos_mi_cuenta"> Mis favoritos </strong> 
+                <a href="" class="subtitulos_mi_cuenta">Mi lista de productos favoritos</a>
+              </button>
+          </li>
+          <li class="lista-iconos-mi-cuenta">
+              <i class="fa fa-address-card" style="color: rgb(70, 70, 70);"></i>
+              <button class="btn btn-block btn-lg" id="cont_titulos_mi_cuenta">
+                <strong class="titulos_mi_cuenta"> Mi cuenta </strong>
+                <a href="/users/editar_perfil/<%=usuarios.id %>" class="subtitulos_mi_cuenta">Mi información personal</a>
+              </button>
+          </li>
+          <li class="lista-iconos-mi-cuenta">
+              <i class="fa fa-user-shield" style="color: rgb(70, 70, 70)";></i>
+              <button class="btn btn-block btn-lg" id="cont_titulos_mi_cuenta">
+                <strong class="titulos_mi_cuenta"> Ley de protección de datos </strong> 
+                <form action="/users/delete/<%=usuarios.id%>?_method=DELETE" method="POST" class="subtitulos_mi_cuenta">
+                    <button type="submit" class="btn btn-block btn-lg" style="width: 140px; font-size: 16px; color: dimgrey;">Eliminar cuenta</button>
+                </form>
+              </button>
+          </li>
+          <li class="lista-iconos-mi-cuenta">
+              <i class="fa fa-arrow-right" style="color: rgb(70, 70, 70)";></i>
+              <button class="btn btn-block btn-lg" id="cont_titulos_mi_cuenta">
+                <strong class="titulos_mi_cuenta"> <a href="/" style="text-decoration: none; color: rgb(24, 23, 23);">Cerrar sesión</a> </strong>
+              </button>
+          </li>
+      </ul>
+      <a href="/" class="volver_inicio_mi_cuenta"> <i class="fal fa-chevron-left"></i> Volver al inicio</a>
+    </div>
+      
+    <div class="container_img_mi_cuenta">
+      <img src="/img/users/imagen_mi_cuenta.jpg" alt="Imagen de Registro">
+    </div>
+  </div>
+     
+  </body>
+
+<!--FOOTER-->
+<%- include("../partials/footer") %> 
+<!--FOOTER-->
+ </body>
+</html>

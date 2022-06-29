@@ -1,0 +1,74 @@
+[
+ {
+  "id": 1,
+  "nombres": "Lllllll",
+  "apellidos": "Ppppp",
+  "tipo_documento": "pasaporte",
+  "dni": "345678",
+  "days": "16",
+  "months": "Octubre",
+  "years": "2008",
+  "email": "aaaa@pppp.com",
+  "tel": "321321342",
+  "password": "",
+  "password2": "$2a$10$WR8txMT61Ycn9xFrH3nJjuyu0zdlJwcrIw4LRrNkNdr0PXgGOVE3S",
+  "img_perfil": {
+   "fieldname": "img_perfil",
+   "originalname": "avatar_hombre.jpg",
+   "encoding": "7bit",
+   "mimetype": "image/jpeg",
+   "destination": "C:\\Users\\Blacksip Consultoria\\Desktop\\digitalHouse\\Tech_Prueba_Local\\public\\img\\users",
+   "filename": "img1648010630578.jpg",
+   "path": "C:\\Users\\Blacksip Consultoria\\Desktop\\digitalHouse\\Tech_Prueba_Local\\public\\img\\users\\img1648010630578.jpg",
+   "size": 4902
+  }
+ },
+ {
+  "id": 2,
+  "nombres": "Dweruiy",
+  "apellidos": "Marnx",
+  "tipo_documento": "cedula_ciudadania",
+  "dni": "98765",
+  "days": "18",
+  "months": "Abril",
+  "years": "1980",
+  "email": "niudrtupo@guto.com",
+  "tel": "321321345",
+  "password": "$2a$10$HMFOPuPlFngmBYnK9cJdMuz1uLlh/GORW8xLkMb6sHAjv9Ec93VOe",
+  "password2": "$2a$10$jKthElcUDpEtPncELaO0IOwKWTYYFXHfi1SBSbiQqwmgWLfY3lwhK",
+  "img_perfil": {
+   "fieldname": "img_perfil",
+   "originalname": "avatar_hombre.jpg",
+   "encoding": "7bit",
+   "mimetype": "image/jpeg",
+   "destination": "C:\\Users\\Blacksip Consultoria\\Desktop\\digitalHouse\\Tech_Prueba_Local\\public\\img\\users",
+   "filename": "img1648054830066.jpg",
+   "path": "C:\\Users\\Blacksip Consultoria\\Desktop\\digitalHouse\\Tech_Prueba_Local\\public\\img\\users\\img1648054830066.jpg",
+   "size": 4902
+  }
+ },
+ {
+  "id": 3,
+  "nombres": "Negro",
+  "apellidos": "Aaaa",
+  "tipo_documento": "cedula_ciudadania",
+  "dni": "4567890",
+  "days": "17",
+  "months": "Octubre",
+  "years": "2008",
+  "email": "negro@negro.com",
+  "tel": "321321345",
+  "password": "$2a$10$TFk7WcxzAMIYpgMx7nObPeP8q4cONsvK3xKErJpeKzpX11hmcbPvW",
+  "password2": "$2a$10$sr.iS6BwTRJ50/M7WOc0WujvbzszjHk4ej/k0wB.EgXUbylkiQhsS",
+  "img_perfil": {
+   "fieldname": "img_perfil",
+   "originalname": "avatar_hombre.jpg",
+   "encoding": "7bit",
+   "mimetype": "image/jpeg",
+   "destination": "C:\\Users\\Blacksip Consultoria\\Desktop\\digitalHouse\\Tech_Prueba_Local\\public\\img\\users",
+   "filename": "img1648057138320.jpg",
+   "path": "C:\\Users\\Blacksip Consultoria\\Desktop\\digitalHouse\\Tech_Prueba_Local\\public\\img\\users\\img1648057138320.jpg",
+   "size": 4902
+  }
+ }
+]
